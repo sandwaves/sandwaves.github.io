@@ -9,7 +9,7 @@ Copy a folder from a GitHub repo into a local project, without cloning the repo 
 
 ## Command
 
-[degit](https://github.com/Rich-Harris/degit) downloads a snapshot of a repo, or of one folder in it. Run it with {% glossary npx %}, so You don't have to install anything:
+[degit](https://github.com/Rich-Harris/degit) downloads a snapshot of a repo, or of one folder in it. Run it with {% glossary npx %}, so you don't have to install anything:
 
 ```powershell
 npx degit USER/REPO/PATH/TO/FOLDER DESTINATION
@@ -23,9 +23,9 @@ Copy the `_sass` folder from the Chirpy theme repo into a local `_sass` folder:
 npx degit cotes2020/jekyll-theme-chirpy/_sass _sass
 ```
 
-This downloads the files in `_sass` from the {% glossary default branch %}, without any github history. 
+This downloads the files in `_sass` from the {% glossary default branch %}, without any git history.
 
- Add `#REF` to the sourceTo copy from a specific branch, tag, or commit (a {% glossary ref %}),:
+To copy from a specific branch, tag, or commit (a {% glossary ref %}), add `#REF` to the source:
 
 ```powershell
 npx degit cotes2020/jekyll-theme-chirpy/_sass#master _sass
