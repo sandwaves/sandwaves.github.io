@@ -1,3 +1,18 @@
 {
-  "recommendations": ["ms-vscode-remote.remote-containers"]
+  "recommendations": [
+    // Liquid tags auto-complete
+    "killalau.vscode-liquid-snippets",
+    // Liquid syntax highlighting and formatting
+    "Shopify.theme-check-vscode",
+    // Shell
+    "timonwong.shellcheck",
+    "mkhl.shfmt",
+    // Common formatter
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "yzhang.markdown-all-in-one",
+    // Git
+    "mhutchie.git-graph"
+  ]
 }
