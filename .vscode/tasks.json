@@ -21,6 +21,42 @@
       },
       "problemMatcher": [],
       "detail": "Build the Jekyll site for production."
+    },
+    {
+      "label": "New Post",
+      "type": "process",
+      "command": "ruby",
+      "args": [
+        "tools/new-post.rb",
+        "${input:postTitle}",
+        "${input:postCategories}",
+        "${input:postTags}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      },
+      "detail": "Create a new post in _posts/ with Jekyll naming and Chirpy front matter."
+    }
+  ],
+  "inputs": [
+    {
+      "id": "postTitle",
+      "type": "promptString",
+      "description": "Post title"
+    },
+    {
+      "id": "postCategories",
+      "type": "promptString",
+      "description": "Categories, comma-separated (max 2, e.g. 'Programming, Ruby'), optional",
+      "default": ""
+    },
+    {
+      "id": "postTags",
+      "type": "promptString",
+      "description": "Tags, comma-separated (lowercased automatically), optional",
+      "default": ""
     }
   ]
 }
