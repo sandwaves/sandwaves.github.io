@@ -160,6 +160,13 @@ pwa:
 
 paginate: 10
 
+plugins:
+  - jekyll-glossary_tooltip
+
+# Terms live in _data/glossary.yml; use {% glossary term %} in posts.
+glossary_tooltip:
+  include_default_style: true
+
 # The base URL of your site
 baseurl: ""
 

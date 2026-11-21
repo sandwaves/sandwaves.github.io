@@ -5,14 +5,14 @@ categories: [Tools, Git]
 tags: [git, github, degit, npx, cli] # TAG names should always be lowercase
 ---
 
-Copy one folder from a GitHub repo into a local project, without cloning the whole repo or bringing its git history along.
+Copy a folder from a GitHub repo into a local project, without cloning the repo or bringing its git history.
 
 ## Command
 
-[degit](https://github.com/Rich-Harris/degit) downloads a snapshot of a repo, or of one folder in it:
+[degit](https://github.com/Rich-Harris/degit) downloads a snapshot of a repo, or of one folder in it. Run it with {% glossary npx %}, so You don't have to install anything:
 
 ```powershell
-npx degit <user>/<repo>/<path/to/folder> <local/destination>
+npx degit USER/REPO/PATH/TO/FOLDER DESTINATION
 ```
 
 ## Example
@@ -23,9 +23,9 @@ Copy the `_sass` folder from the Chirpy theme repo into a local `_sass` folder:
 npx degit cotes2020/jekyll-theme-chirpy/_sass _sass
 ```
 
-This downloads the files in `_sass` from the default branch, without any github history. 
+This downloads the files in `_sass` from the {% glossary default branch %}, without any github history. 
 
-To copy from a specific branch, tag, or commit, add `#<ref>` to the source:
+ Add `#REF` to the sourceTo copy from a specific branch, tag, or commit (a {% glossary ref %}),:
 
 ```powershell
 npx degit cotes2020/jekyll-theme-chirpy/_sass#master _sass

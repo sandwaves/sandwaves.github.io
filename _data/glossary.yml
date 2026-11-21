@@ -1,0 +1,17 @@
+# Glossary terms for jekyll-glossary_tooltip.
+# Use in Markdown: {% glossary term %} or {% glossary term, display: other text %}
+# Fields: term (required, no commas), definition (required), url (optional).
+
+- term: Jekyll
+  definition: A static site generator written in Ruby that turns Markdown and Liquid templates into a website.
+  url: https://jekyllrb.com/
+
+- term: npx
+  definition: A command that comes with npm. It runs a package's command-line tool, downloading the package temporarily if it isn't installed.
+  url: https://docs.npmjs.com/cli/commands/npx
+
+- term: default branch
+  definition: The branch a GitHub repo shows and clones by default, usually main or master.
+
+- term: ref
+  definition: A git name that points to a commit, such as a branch name, a tag, or a commit hash.
