@@ -141,6 +141,9 @@ comments:
     reactions_enabled: # optional, default to the value of `1`
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
+# Off by default, so theme JS/CSS/fonts load from CDNs. To self-host:
+#   git submodule add https://github.com/cotes2020/chirpy-static-assets.git assets/lib
+# then set `enabled: true` below and uncomment `submodules: true` in .github/workflows/pages-deploy.yml
 assets:
   self_host:
     enabled: # boolean, keep empty means false
