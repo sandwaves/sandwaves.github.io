@@ -3,6 +3,7 @@
 # Run jekyll serve and then launch the site
 
 prod=false
+poll=false
 command="bundle exec jekyll s -l"
 host="127.0.0.1"
 
@@ -14,6 +15,7 @@ help() {
   echo "Options:"
   echo "     -H, --host [HOST]    Host to bind to."
   echo "     -p, --production     Run Jekyll in 'production' mode."
+  echo "     -P, --poll           Poll for file changes (use if edits aren't picked up)."
   echo "     -h, --help           Print this help information."
 }
 
@@ -26,6 +28,10 @@ while (($#)); do
     ;;
   -p | --production)
     prod=true
+    shift
+    ;;
+  -P | --poll)
+    poll=true
     shift
     ;;
   -h | --help)
@@ -46,7 +52,7 @@ if $prod; then
   command="JEKYLL_ENV=production $command"
 fi
 
-if [ -e /proc/1/cgroup ] && grep -q docker /proc/1/cgroup; then
+if $poll; then
   command="$command --force_polling"
 fi
 
