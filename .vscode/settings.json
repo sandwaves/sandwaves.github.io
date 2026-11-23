@@ -23,6 +23,8 @@
   // Stylint extension settings
   "stylelint.snippet": ["css", "scss"],
   "stylelint.validate": ["css", "scss"],
+  // Use Git Bash on Windows (PowerShell's `bash` launches WSL, which can't see the Windows Ruby)
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   // Run tasks in macOS
   "terminal.integrated.profiles.osx": {
     "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] }
