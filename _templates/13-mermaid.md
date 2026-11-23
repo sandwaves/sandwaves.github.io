@@ -1,14 +1,4 @@
-<!-- Requires `mermaid: true` in the post front matter -->
-
-```mermaid
-gantt
-  title  Adding GANTT diagram functionality to mermaid
-  apple :a, 2017-07-20, 1w
-  banana :crit, b, 2017-07-23, 1d
-  cherry :active, c, after b a, 1d
-```
-
-<!-- Flowchart -->
+<!-- Needs `mermaid: true` in front matter. Any Mermaid diagram type works inside a ```mermaid fence. -->
 
 ```mermaid
 flowchart LR

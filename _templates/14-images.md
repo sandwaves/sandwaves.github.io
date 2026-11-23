@@ -1,23 +1,23 @@
-<!-- Default: full width, centered, with a caption (italic line directly below) -->
+<!--
+Put image files in assets/img/posts/ and reference them by absolute path: /assets/img/posts/<file>.
+Set width and height to the image's pixel size so the page does not shift while it loads.
+-->
+
+<!-- Default: full width, centered. An italic line directly below becomes the caption. -->
 
 ![Desktop View](/assets/img/posts/example.png){: width="972" height="589" }
 _Image caption_
 
-<!-- Left aligned (.normal), 75% width -->
+<!-- Left aligned at 75% width -->
 
-![Desktop View](/assets/img/posts/example.png){: width="972" height="589" .w-75 .normal}
+![Desktop View](/assets/img/posts/example.png){: width="972" height="589" .w-75 .normal }
 
-<!-- Float left: text wraps on the right -->
+<!-- Float left (text wraps on the right). Use .right to float right. -->
 
-![Desktop View](/assets/img/posts/example.png){: width="972" height="589" .w-50 .left}
+![Desktop View](/assets/img/posts/example.png){: width="972" height="589" .w-50 .left }
 Text that wraps around the image goes here.
 
-<!-- Float right: text wraps on the left -->
+<!-- Separate images for light and dark mode, with shadow and rounded corners -->
 
-![Desktop View](/assets/img/posts/example.png){: width="972" height="589" .w-50 .right}
-Text that wraps around the image goes here.
-
-<!-- Dark/light mode variants with shadow and rounded corners -->
-
-![light mode only](/assets/img/posts/example-light.png){: .light .w-75 .shadow .rounded-10 w='1212' h='668' }
-![dark mode only](/assets/img/posts/example-dark.png){: .dark .w-75 .shadow .rounded-10 w='1212' h='668' }
+![light mode only](/assets/img/posts/example-light.png){: .light .w-75 .shadow .rounded-10 width="1212" height="668" }
+![dark mode only](/assets/img/posts/example-dark.png){: .dark .w-75 .shadow .rounded-10 width="1212" height="668" }

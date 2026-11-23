@@ -1,23 +1,13 @@
-<!-- Plain: no syntax highlighting, no line numbers -->
-
-```
-This is a common code snippet, without syntax highlight and line number.
-```
-
-<!-- With a language: highlighting and line numbers -->
+<!-- A language tag gives highlighting and line numbers. A fence without one gives neither. -->
 
 ```bash
-if [ $? -ne 0 ]; then
-  echo "The command was not successful.";
-fi;
+echo "highlighted, with line numbers"
 ```
 
-<!-- With a filename shown in the header instead of the language -->
+<!-- Show a file name in the header instead of the language -->
 
 ```sass
-@import
-  "colors/light-typography",
-  "colors/dark-typography";
+@import "colors/light-typography";
 ```
 {: file='_sass/jekyll-theme-chirpy.scss'}
 

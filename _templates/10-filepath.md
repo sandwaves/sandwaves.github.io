@@ -1,1 +1,3 @@
-Here is the `/path/to/the/file.extend`{: .filepath}.
+<!-- Highlights an inline path as a file path instead of code -->
+
+Edit `/path/to/the/file.ext`{: .filepath}.

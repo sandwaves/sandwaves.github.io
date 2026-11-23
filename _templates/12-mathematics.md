@@ -1,6 +1,6 @@
-<!-- Requires `math: true` in the post front matter -->
+<!-- Needs `math: true` in front matter. Inline math uses $...$ and block math uses $$...$$ on their own lines. -->
 
-<!-- Block equation with a label you can reference -->
+<!-- Numbered block equation with a label to reference -->
 
 $$
 \begin{equation}
@@ -11,9 +11,9 @@ $$
 
 We can reference the equation as \eqref{eq:series}.
 
-<!-- Inline math uses single dollar signs -->
+<!-- Inline math -->
 
-When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
+When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$:
 
 <!-- Unnumbered block equation -->
 

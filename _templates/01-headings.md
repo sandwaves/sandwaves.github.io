@@ -1,4 +1,4 @@
-<!-- Normal headings (H2 and H3 appear in the post's table of contents) -->
+<!-- Start sections at ##. The post title renders as the H1. H2 and H3 appear in the table of contents. -->
 
 ## Section heading
 
@@ -10,8 +10,3 @@
 
 ## Heading not in TOC
 {: data-toc-skip='' }
-
-<!-- Spacing utility classes, as used on the demo page -->
-
-## Heading with margins
-{: data-toc-skip='' .mt-4 .mb-0 }

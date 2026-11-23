@@ -1,8 +1,5 @@
-<!-- Mark the footnote in the text -->
+<!-- Mark the footnote in the text, then define it at the end of the post. -->
 
-Clicking the hook will locate the footnote[^footnote], and here is another footnote[^fn-nth-2].
+Clicking the hook jumps to the footnote[^footnote].
 
-<!-- Define the footnote text, usually at the end of the post -->
-
-[^footnote]: The footnote source
-[^fn-nth-2]: The 2nd footnote source
+[^footnote]: The footnote text.

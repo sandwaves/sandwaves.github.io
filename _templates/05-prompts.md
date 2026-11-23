@@ -1,4 +1,4 @@
-<!-- The attribute line must come directly after the quote, with no blank line between -->
+<!-- Callout boxes. Pick the type by tone: tip (helpful extra), info (neutral note), warning (could cause trouble), danger (could cause damage or data loss). -->
 
 > A `tip` type prompt.
 {: .prompt-tip }
