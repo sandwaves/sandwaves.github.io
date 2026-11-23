@@ -39,6 +39,14 @@
       "detail": "Build the Jekyll site for production."
     },
     {
+      "label": "Check Glossary Terms",
+      "type": "process",
+      "command": "ruby",
+      "args": ["tools/check-glossary.rb"],
+      "problemMatcher": [],
+      "detail": "Fail on unknown or duplicated {% glossary %} terms, without a full build."
+    },
+    {
       "label": "New Post",
       "type": "process",
       "command": "ruby",
