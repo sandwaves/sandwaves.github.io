@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% comment %}
+  Copy of _layouts/page.html from jekyll-theme-chirpy 7.6.0, plus the
+  cheatsheets branch. Cheatsheets keep layout 'page' because Chirpy picks the
+  JS bundle (copy buttons, image popup) by layout name.
+{% endcomment %}
+
+{% include lang.html %}
+
+{% if page.collection == 'cheatsheets' %}
+  {% include cheatsheet.html %}
+{% else %}
+  <article class="px-1">
+    {% if page.layout == 'page' or page.collection == 'tabs' %}
+      {% assign tab_key = page.title | downcase %}
+      {% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
+      <h1 class="dynamic-title">
+        {{ title }}
+      </h1>
+      <div class="content">
+        {{ content }}
+      </div>
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </article>
+{% endif %}

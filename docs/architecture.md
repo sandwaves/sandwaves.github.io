@@ -14,23 +14,31 @@ How source turns into the published site, and the constraints each piece depends
 
 ## Custom plugins depend on the Actions deploy
 
-The site deploys through GitHub Actions. The classic branch-based Pages build runs in safe mode, which ignores `_plugins/`. Keep the repo's Pages source set to **GitHub Actions**, or both hooks silently stop running.
+The site deploys through GitHub Actions. The classic branch-based Pages build runs in safe mode, which ignores `_plugins/`. Keep the repo's Pages source set to **GitHub Actions**, or every plugin there silently stops running.
 
 ## `_plugins/image-dimensions.rb`
 
 Adds `width` and `height` to `<img>` tags, read from the file with `fastimage`.
 
-- It is a `:documents, :post_convert` hook. It covers collection documents (posts and `_tabs/`), not plain pages such as `index.html`.
+- It is a `:documents, :post_convert` hook. It covers collection documents (posts, `_tabs/`, `_cheatsheets/`), not plain pages such as `index.html`.
 - It runs after Markdown conversion and before the layout, so Chirpy treats the sizes as if they were written in the post.
 - It keeps tags that already carry `width`.
 - It only resolves local files. A relative `src` is resolved through the post's `media_subpath`. With no `media_subpath`, the tag is left alone.
 
 ## `_plugins/posts-lastmod-hook.rb`
 
-Sets `last_modified_at` on posts by running `git log` against the post's file.
+Sets `last_modified_at` on posts and cheatsheets by running `git log` against the file. The collections it covers are listed in `LASTMOD_COLLECTIONS`.
 
 - It needs the full git history. CI checks out with `fetch-depth: 0` for this reason, so keep that setting.
-- A post gets the field only once more than one commit touches it. New or uncommitted posts have none.
+- A file gets the field only once more than one commit touches it. New or uncommitted files have none.
+
+## `_plugins/kbd.rb`
+
+Registers the `{% kbd Ctrl+Shift+P %}` Liquid tag, which renders `<span class="keys">` around one `<kbd>` per key. Usage: `_templates/17-keyboard-keys.md`.
+
+- It parses the keys when the template is parsed, so an empty tag fails the build with a Liquid syntax error naming the file.
+- Key text is HTML-escaped, and Markdown characters (`` \ ` * _ | [ ] ``) become numeric entities. Liquid runs before kramdown, so without that a key like `Ctrl+\` or `Ctrl+[` would be read as Markdown.
+- The `.keys` styles live in `assets/css/jekyll-theme-chirpy.scss`. Chirpy's own `kbd` style draws the keycaps.
 
 ## Gems
 

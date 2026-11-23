@@ -1,0 +1,73 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+/* This file is Liquid-processed: keep Liquid tag syntax out of comments. */
+
+/* Keyboard keys from the kbd tag, _plugins/kbd.rb */
+.keys {
+  white-space: nowrap;
+
+  kbd {
+    margin: 0 0.15rem;
+  }
+}
+
+/* Cheatsheets, _includes/cheatsheet.html */
+.cheatsheet {
+  .sheet-grid {
+    column-width: 20rem;
+    column-gap: 2rem;
+  }
+
+  .sheet-section {
+    break-inside: avoid;
+    padding-top: 0.75rem;
+    margin-bottom: 1.5rem;
+    border-top: 1px solid var(--main-border-color);
+
+    > h2 {
+      margin-top: 0;
+      font-size: 1.25rem;
+    }
+
+    /* Chirpy tables never wrap; in a narrow card, wrap between key combos instead of scrolling. */
+    th,
+    td {
+      white-space: normal;
+      padding: 0.35rem 0.6rem;
+    }
+  }
+}
+
+@media print {
+  body:has(.cheatsheet) {
+    #sidebar,
+    #topbar-wrapper,
+    #panel-wrapper,
+    #tail-wrapper,
+    #back-to-top {
+      display: none !important;
+    }
+
+    #main-wrapper {
+      margin-left: 0 !important;
+    }
+
+    main {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}

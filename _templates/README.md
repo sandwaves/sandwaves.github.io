@@ -17,6 +17,7 @@ One copy-paste snippet file per Markdown feature the Chirpy theme supports. Read
 | Images: size, caption, alignment, float, dark/light variants | `14-images.md` |
 | Video, audio, YouTube, Bilibili, Twitch, Spotify track embeds | `15-video.md` |
 | Glossary term tooltip | `16-glossary-tooltip.md` |
+| Keyboard shortcut keycaps | `17-keyboard-keys.md` |
 
 ## Attribute lines
 

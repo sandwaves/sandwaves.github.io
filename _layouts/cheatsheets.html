@@ -1,0 +1,21 @@
+---
+layout: page
+# Index of the cheatsheets collection, used by _tabs/cheatsheets.md.
+---
+
+{% assign sheets = site.cheatsheets | sort: 'title' %}
+
+{% if sheets.size > 0 %}
+  <ul class="list-unstyled">
+    {% for sheet in sheets %}
+      <li class="mb-3">
+        <a href="{{ sheet.url | relative_url }}">{{ sheet.title }}</a>
+        {% if sheet.description %}
+          <div class="small text-muted">{{ sheet.description }}</div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="text-muted">No cheatsheets yet.</p>
+{% endif %}

@@ -1,0 +1,25 @@
+---
+layout: compress
+swcache: true
+# Copy of assets/js/data/search.json from jekyll-theme-chirpy 7.6.0,
+# extended to index the cheatsheets collection.
+---
+
+{% assign docs = site.posts | concat: site.cheatsheets %}
+[
+  {% for post in docs %}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | relative_url | jsonify }},
+    {% if post.collection == 'cheatsheets' %}
+    "categories": "Cheatsheet",
+    {% else %}
+    "categories": {{ post.categories | join: ', ' | jsonify }},
+    {% endif %}
+    "tags": {{ post.tags | join: ', ' | jsonify }},
+    "date": {{ post.date | jsonify }},
+    {% capture content -%}{% include post-summary.html full_text=true %}{%- endcapture -%}
+    "content": {{ content | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
