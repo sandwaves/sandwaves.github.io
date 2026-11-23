@@ -5,6 +5,14 @@
       "label": "Run Jekyll Server",
       "type": "shell",
       "command": "./tools/run.sh",
+      "windows": {
+        "options": {
+          "shell": {
+            "executable": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "args": ["-c"]
+          }
+        }
+      },
       "group": {
         "kind": "build",
         "isDefault": true
@@ -16,6 +24,14 @@
       "label": "Build Jekyll Site",
       "type": "shell",
       "command": "./tools/test.sh",
+      "windows": {
+        "options": {
+          "shell": {
+            "executable": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "args": ["-c"]
+          }
+        }
+      },
       "group": {
         "kind": "build"
       },
