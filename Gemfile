@@ -3,6 +3,7 @@
 source "https://rubygems.org"
 
 gem "jekyll-theme-chirpy", "~> 7.6"
+gem "fastimage", "~> 2.4" # image sizes for _plugins/image-dimensions.rb
 
 group :jekyll_plugins do
   gem "jekyll-glossary_tooltip", "~> 3.0"
