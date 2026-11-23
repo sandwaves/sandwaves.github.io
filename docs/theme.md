@@ -9,7 +9,7 @@ A copy stops receiving upstream fixes. These files are copies of gem 7.6.0 with 
 | File | Local addition |
 | --- | --- |
 | `_layouts/page.html` | Branch for the `cheatsheets` collection |
-| `assets/css/jekyll-theme-chirpy.scss` | Custom styles below the `append your custom style below` comment |
+| `assets/css/jekyll-theme-chirpy.scss` | Custom styles below the `append your custom style below` comment, including all glossary tooltip styles |
 | `assets/js/data/search.json` | Cheatsheets added to the search index |
 
 `assets/css/jekyll-theme-chirpy.scss` is rendered through Liquid, so a Liquid tag written in one of its comments runs. Name tags in prose there (`the kbd tag`).

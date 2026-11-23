@@ -168,7 +168,7 @@ plugins:
 
 # Terms live in _data/glossary.yml; use {% glossary term %} in posts.
 glossary_tooltip:
-  include_default_style: true
+  include_default_style: false # styled in assets/css/jekyll-theme-chirpy.scss
 
 # The base URL of your site
 baseurl: ""

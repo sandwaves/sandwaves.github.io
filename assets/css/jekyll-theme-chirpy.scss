@@ -51,6 +51,71 @@
   }
 }
 
+/* Glossary tooltips from the jekyll-glossary_tooltip gem. Its default CSS is off
+   (glossary_tooltip.include_default_style in _config.yml), so these are the only styles. */
+.jekyll-glossary {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--link-color);
+  cursor: help;
+
+  .jekyll-glossary-tooltip {
+    position: absolute;
+    bottom: calc(100% + 0.5rem);
+    left: 50%;
+    z-index: 10;
+    width: max-content;
+    max-width: min(18rem, 80vw);
+    padding: 0.5rem 0.75rem;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: left;
+    white-space: normal;
+    color: var(--text-color);
+    background: var(--card-bg);
+    border: 1px solid var(--main-border-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px var(--menu-shadow-color);
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      opacity 0.15s ease-in-out,
+      visibility 0.15s ease-in-out;
+
+    /* Arrow: a rotated square sharing the tooltip background and border. */
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 0.6rem;
+      height: 0.6rem;
+      background: var(--card-bg);
+      border-right: 1px solid var(--main-border-color);
+      border-bottom: 1px solid var(--main-border-color);
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  &:hover .jekyll-glossary-tooltip,
+  &:focus-within .jekyll-glossary-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+/* The gem wraps the definition in parentheses so stripped excerpts read well; hide them here. */
+.jekyll-glossary-tooltip-hidden {
+  display: none;
+}
+
+/* The gem leaves the source link empty and expects its text from CSS. */
+.jekyll-glossary-source-link::before {
+  content: '[source]';
+}
+
 @media print {
   body:has(.cheatsheet) {
     #sidebar,

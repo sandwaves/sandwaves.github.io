@@ -44,6 +44,7 @@ Registers the `{% kbd Ctrl+Shift+P %}` Liquid tag, which renders `<span class="k
 
 - `Gemfile.lock` is gitignored, so every CI run resolves fresh versions within the `~>` ranges. A build that passes locally can fail in CI after an upstream release. Compare `bundle info <gem>` locally against the versions in the CI log.
 - Jekyll plugin gems go in the `:jekyll_plugins` group **and** in `plugins:` in `_config.yml` (as with `jekyll-glossary_tooltip`).
+- `jekyll-glossary_tooltip` can inject its own CSS into every page. That is off (`glossary_tooltip.include_default_style: false`), and the tooltip styles live in `assets/css/jekyll-theme-chirpy.scss`. On a gem upgrade, check that the tag's markup and class names in `lib/jekyll-glossary_tooltip/tag.rb` still match those styles.
 - Libraries that a local `_plugins/` file `require`s go in the main group (as with `fastimage`).
 
 ## What gets published
