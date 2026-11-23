@@ -39,12 +39,12 @@ javascript:(()=>{alert('Hello, World!');})();
 ```
 
 Then I'll add a bookmark named `Hello, World` in my browser's bookmarks toolbar
-![add bookmark](../assets/img/posts/bookmarklet_helloworld.png){: .w-75 .normal }
+![add bookmark](/assets/img/posts/bookmarklet_helloworld.png){: width="753" height="649" .w-75 .normal }
 
 
 Clicking on it will show the pop-up
 
-![run bookmarklet](../assets/img/posts/bookmarklet_helloworld_run.gif){: .w-75 .normal }
+![run bookmarklet](/assets/img/posts/bookmarklet_helloworld_run.gif){: width="1128" height="649" .w-75 .normal }
 
 ---
 
