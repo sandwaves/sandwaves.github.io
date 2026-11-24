@@ -1,6 +1,6 @@
 # Layouts
 
-Layouts come from the `jekyll-theme-chirpy` gem (7.6), except the overrides and additions in `_layouts/` (listed in [theme.md](theme.md)). Read a gem layout's source at `$(bundle info --path jekyll-theme-chirpy)/_layouts/<name>.html`.
+Layouts come from the `jekyll-theme-chirpy` gem, except the overrides and additions in `_layouts/` (listed in [theme.md](theme.md)). Read a gem layout's source at `$(bundle info --path jekyll-theme-chirpy)/_layouts/<name>.html`.
 
 ## Which layout a file gets
 
@@ -32,6 +32,8 @@ compress
         └── category, tag
 ```
 
+`default` runs `refactor-content.html` only for its **direct** children (`home`, `post`, `page`). That include lazy-loads images, applies `media_subpath`, adds image size and position classes, adds code block headers and copy buttons, and adds heading anchors. The grandchild layouts skip it.
+
 ## Chirpy picks JS by layout name
 
 `_includes/js-selector.html` and `head.html` in the gem choose scripts and styles by the page's own `layout` value, not by the layout chain. Only `post`, `page` and `home` get the image popup and the code-block copy button. A page on a custom layout gets the `commons` bundle without them, even when that layout inherits from `page`.
@@ -46,11 +48,9 @@ Cheatsheets use `layout: page` for the reason above. The repo's `_layouts/page.h
 
 The split runs before `refactor-content.html`, so heading anchors and copy buttons still apply. Writing a cheatsheet: [cheatsheets.md](cheatsheets.md).
 
-`default` runs `refactor-content.html` only for its **direct** children (`home`, `post`, `page`). That include lazy-loads images, applies `media_subpath`, adds image size and position classes, adds code block headers and copy buttons, and adds heading anchors. The grandchild layouts skip it.
-
 ## Front matter a layout reads
 
-- **`post`:** `title`, `date`, `description`, `image` (`path`, `alt`, `lqip`, `no_bg`), `author`/`authors`, `categories`, `tags`, `toc`, `comments`, `math`, `mermaid`, `media_subpath`. `last_modified_at` comes from `_plugins/posts-lastmod-hook.rb`. Usage is in [writing-posts.md](writing-posts.md) and `_templates/00-front-matter.md`.
+- **`post`:** the keys in [writing-posts.md](writing-posts.md) and `_templates/00-front-matter.md`.
 - **`home`:** reads `pin` and `hidden` from each post.
 - **Tabs:** `icon` and `order` (see [theme.md](theme.md)).
 - **Any page:** `compress_html: false` skips minification for that page.

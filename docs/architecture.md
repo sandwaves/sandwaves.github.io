@@ -1,6 +1,6 @@
 # Architecture
 
-How source turns into the published site, and the constraints each piece depends on. Posts: [writing-posts.md](writing-posts.md). Theme, tabs, site config: [theme.md](theme.md).
+How source turns into the published site, and the constraints each piece depends on.
 
 ## Pipeline
 
@@ -43,6 +43,7 @@ Registers the `{% kbd Ctrl+Shift+P %}` Liquid tag, which renders `<span class="k
 ## Gems
 
 - `Gemfile.lock` is gitignored, so every CI run resolves fresh versions within the `~>` ranges. A build that passes locally can fail in CI after an upstream release. Compare `bundle info <gem>` locally against the versions in the CI log.
+- `jekyll-theme-chirpy "~> 7.6"` lets CI pick up any 7.x release with no change in this repo. When the Chirpy version in a CI log or `bundle info` moves past the one in [theme.md](theme.md#overriding-theme-files), diff the copied theme files as described there.
 - Jekyll plugin gems go in the `:jekyll_plugins` group **and** in `plugins:` in `_config.yml` (as with `jekyll-glossary_tooltip`).
 - `jekyll-glossary_tooltip` can inject its own CSS into every page. That is off (`glossary_tooltip.include_default_style: false`), and the tooltip styles live in `assets/css/jekyll-theme-chirpy.scss`. On a gem upgrade, check that the tag's markup and class names in `lib/jekyll-glossary_tooltip/tag.rb` still match those styles.
 - Libraries that a local `_plugins/` file `require`s go in the main group (as with `fastimage`).

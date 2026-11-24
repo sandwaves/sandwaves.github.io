@@ -19,6 +19,7 @@ A cheatsheet is a one-page **quick reference**: commands, shortcuts and flags yo
    - One topic per card, short enough to fit on a screen. Split a long card into two `##` sections.
    - Inside a card, use tables, short lists, code blocks and `###` subheadings.
    - Keyboard shortcuts: `{% kbd Ctrl+Shift+P %}` (snippet: `_templates/17-keyboard-keys.md`).
+   - Glossary tooltips: same procedure as posts, in [writing-posts.md](writing-posts.md#glossary-tooltips).
    - Other Markdown features: the snippets in `_templates/`, indexed in `_templates/README.md`.
 4. Run `bash tools/test.sh`. Done when it is green and the sheet appears in `_site/cheatsheets/index.html`.
 

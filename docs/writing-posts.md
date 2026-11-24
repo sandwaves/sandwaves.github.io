@@ -13,6 +13,10 @@ Every post's front matter has:
 
 Optional keys (preview image, pinning, math, diagrams) are in `_templates/00-front-matter.md`. Add one only when the post uses it. Layout, comments, TOC and the permalink come from `defaults` in `_config.yml`, so leave them out of the post.
 
+## Edit
+
+The URL `/posts/<slug>/` comes from the file name, not the `title` key. Keep a published post's file name, so links to it stay valid. `last_modified_at` is set from git history on build, so an edit needs no front matter change.
+
 ## Chirpy features
 
 `_templates/` holds one copy-paste snippet per Markdown feature the theme supports, indexed in `_templates/README.md`. Callouts, filepaths, math, mermaid, images and glossary tooltips are all there. Read the matching snippet before using a feature beyond plain Markdown. Jekyll skips the folder, so nothing in it gets published.

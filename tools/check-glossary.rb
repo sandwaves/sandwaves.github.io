@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 # Fast check for {% glossary term %} usage, without a full Jekyll build.
-# Fails on terms used in posts/tabs that are missing from _data/glossary.yml,
+# Fails on terms used in posts, tabs or cheatsheets that are missing from _data/glossary.yml,
 # and on duplicated terms inside the glossary itself.
 
 require 'yaml'
@@ -20,7 +20,7 @@ end
 known = terms.map(&:downcase)
 tag = /\{%-?\s*glossary\s+([^,%}]+?)\s*(?:,[^%]*)?-?%\}/
 
-Dir.glob(File.join(ROOT, '{_posts,_tabs}', '**', '*.{md,markdown,html}')).sort.each do |file|
+Dir.glob(File.join(ROOT, '{_posts,_tabs,_cheatsheets}', '**', '*.{md,markdown,html}')).sort.each do |file|
   File.foreach(file).with_index(1) do |line, number|
     line.scan(tag) do |(term)|
       next if known.include?(term.downcase)
